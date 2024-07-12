@@ -1,0 +1,61 @@
+<!-- ImageBlock:
+ - will append the link text to the previous inlineElement
+ - will create a new <figure> block level element containing the image.
+-->
+<!--
+Reason: It will append the linkText to the previous inline elment and will extract the img to blockScope,
+if there is no text for the link the linkText node will be removed
+ -->
+<li>
+    <span class="image-inline">
+        <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+            something
+            <img src="https://i.ytimg.com/vi/jVzsrlGOcME/maxresdefault.jpg">
+        </a>
+    </span>
+</li>
+<!-- Will remove the <a> tag -->
+<li>
+    <span class="image-inline">
+        <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+            <img src="https://i.ytimg.com/vi/jVzsrlGOcME/maxresdefault.jpg">
+        </a>
+    </span>
+</li>
+
+<!-- ImageInline:
+ - will append the link text to the previous inlineElement
+ - will create an img inline element containing the image and adding extra functionality that if you click on it it will open the link
+    -->
+<li>
+    <span class="image-inline">
+        <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+            something
+            <img src="https://i.ytimg.com/vi/jVzsrlGOcME/maxresdefault.jpg">
+        </a>
+    </span>
+</li>
+
+
+
+<!-- ImageBlock:
+ - will create a new <figure> block level element containing the image and adding extra functionality that if you click on it it will open the link
+    -->
+<ul>
+    <li>
+        <figure class="image">
+            <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://i.ytimg.com/vi/jVzsrlGOcME/maxresdefault.jpg">
+            </a>
+        </figure>
+    </li>
+</ul>
+
+
+<!--
+
+    If the images are treated as ImageBlocks then the following happens
+    - When CKEditor5 sees the img tag, it will automatically configure it to <figure class="image"> ..</figure> in block scope,
+    thus extracting from inline elements like <a>, <span> etc
+
+-->
